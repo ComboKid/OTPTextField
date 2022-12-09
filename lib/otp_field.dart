@@ -186,7 +186,9 @@ class _OTPTextFieldState extends State<OTPTextField> {
         textAlign: TextAlign.center,
         style: widget.style,
         inputFormatters: widget.inputFormatter,
-        maxLength: 1,
+        // this fix OTP paste from clipboard for IOS not work
+        // TODO check if https://github.com/iamvivekkaushik/OTPTextField/issues/7 resolved
+        // maxLength: 1,
         focusNode: _focusNodes[index],
         obscureText: widget.obscureText,
         decoration: InputDecoration(
